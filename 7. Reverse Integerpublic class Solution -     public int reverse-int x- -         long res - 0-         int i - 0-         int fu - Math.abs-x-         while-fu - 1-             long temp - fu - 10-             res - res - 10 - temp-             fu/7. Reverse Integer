@@ -1,0 +1,19 @@
+// in case of overflow
+public class Solution {
+    public int reverse(int x) {
+        long res = 0;
+        int i = 0;
+        int fu = Math.abs(x);
+        while(fu >= 1){
+            long temp = fu % 10;
+            res = res * 10 + temp;
+            fu /= 10;
+        }
+        if(res > Integer.MAX_VALUE){
+        return 0;
+        }
+        if(x < 0)
+        return (int)-res;
+        return (int)res;
+    }
+}
